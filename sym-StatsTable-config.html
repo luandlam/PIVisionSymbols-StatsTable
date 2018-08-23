@@ -1,0 +1,37 @@
+<ul kendo-panel-bar class="t-side-panel-bgcolor" style="font-size: 14px;"> 
+	<li class="k-state-active"> 
+		<span class="panel-bar-label-no-wrap">Configuration</span>
+		<div class="config-option-single-row" style="margin:10px 20px; font-size: 14px;"> 
+			<div class="config-option-ie11-overflow-fix"> 
+				<div class="config-label">Display Digits</div>
+				<input type="number" min="0" max="4" ng-model="config.DisplayDigits"
+					style="width:100px; height:100%; float: right; margin-right:65px;">
+	
+				<div style="width: 85%; margin: 10px 10px 15px 0px;">
+					<pv-color-picker colorkeyword="Grid Color" ng-model="config.GridColor">
+					</pv-color-picker>
+				</div>
+				
+				<div style="width: 85%; margin: 0px 10px 15px 0px;">
+					<pv-color-picker colorkeyword="Text Color" ng-model="config.TextColor">
+					</pv-color-picker>
+				</div>
+				
+				<div class="config-label">Text Size</div>
+				<input type="range"
+				min="5" max = "20" step="1" ng-model="config.TextSize"
+				title="{{config.TextSize}}"
+				style="width:110px; height:100%; float: right; margin-right:30px;">
+				</input>
+				
+				<div>
+					</br>
+					<input style="vertical-align:middle;margin: 0px 20px 2px 48px" type="checkbox" ng-model="config.ShowMin" checked>Show Minimum</input></br></br>
+					<input style="vertical-align:middle;margin: 0px 20px 2px 48px" type="checkbox" ng-model="config.ShowMax" checked>Show Maximum</input></br></br>
+					<input style="vertical-align:middle;margin: 0px 20px 2px 48px" type="checkbox" ng-model="config.ShowAverage" checked>Show Average</input></br></br>
+					<input style="vertical-align:middle;margin: 0px 20px 2px 48px" type="checkbox" ng-model="config.ShowTotal" checked>Show Total</input></br></br>
+				</div>
+			</div>
+		</div> 
+	</li>
+</ul>

@@ -1,0 +1,49 @@
+<head>
+<style>
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+	
+	th {
+		font-weight: bold;
+	}
+	
+	th, td {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 10px;
+		padding-right: 10px;
+		text-align: left;
+		font-size: {{config.TextSize}}px;
+	}
+	 
+	table, th, td {
+		border: 1px solid {{config.GridColor}};
+		color: {{config.TextColor}};
+	}
+</style>
+
+</head>
+<body>
+<div>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Value</th> 
+			<th ng-if="config.ShowMin">Min</th>
+			<th ng-if="config.ShowMax">Max</th>
+			<th ng-if="config.ShowAverage">Average</th>
+			<th ng-if="config.ShowTotal">Total</th>
+		</tr>
+		<tr ng-repeat='tag in TagStats'>
+			<td title="{{tag.Units}}">{{tag.Name}}</td>
+			<td title="{{tag.LastTime}}">{{tag.LastValue | number: config.DisplayDigits}}</td> 
+			<td ng-if="config.ShowMin" title="{{tag.MinTime}}">{{tag.MinValue | number: config.DisplayDigits}}</td>
+			<td ng-if="config.ShowMax" title="{{tag.MaxTime}}">{{tag.MaxValue | number: config.DisplayDigits}}</td>
+			<td ng-if="config.ShowAverage">{{tag.Average | number: config.DisplayDigits}}</td>
+			<td ng-if="config.ShowTotal">{{tag.Total | number: config.DisplayDigits}}</td>
+		</tr>
+	</table>
+</div>
+</body>
